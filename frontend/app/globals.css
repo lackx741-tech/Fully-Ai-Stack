@@ -104,6 +104,26 @@ a {
   color: #c4ccda;
 }
 
+.run-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.run-item {
+  border: 1px solid #273244;
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #0f151f;
+}
+
+.run-item-prompt {
+  margin: 0 0 0.4rem;
+  color: #e8edf8;
+}
+
 .inspector {
   padding: 1rem;
 }
