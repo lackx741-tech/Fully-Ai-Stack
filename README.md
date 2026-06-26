@@ -93,7 +93,7 @@ These files describe the intended supervision model, specialist responsibilities
 ### Backend
 
 ```bash
-cd /home/runner/work/Fully-Ai-Stack/Fully-Ai-Stack/backend
+cd backend
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -107,7 +107,7 @@ Backend default URL:
 ### Frontend
 
 ```bash
-cd /home/runner/work/Fully-Ai-Stack/Fully-Ai-Stack/frontend
+cd frontend
 npm install
 npm run dev
 ```
@@ -128,7 +128,7 @@ The following commands are currently valid in this repository:
 ### Frontend
 
 ```bash
-cd /home/runner/work/Fully-Ai-Stack/Fully-Ai-Stack/frontend
+cd frontend
 npm install
 npm run typecheck
 npm run lint
@@ -138,7 +138,7 @@ npm run build
 ### Backend
 
 ```bash
-cd /home/runner/work/Fully-Ai-Stack/Fully-Ai-Stack
+# run from the repository root
 python -m pip install -r backend/requirements.txt
 python -m compileall backend/app
 ```
