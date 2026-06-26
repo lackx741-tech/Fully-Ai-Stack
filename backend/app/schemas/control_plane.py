@@ -23,7 +23,7 @@ class RunRecord(BaseModel):
     route: str
     assigned_agent_id: str
     status: str
-    output: str
+    output: str | None = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 

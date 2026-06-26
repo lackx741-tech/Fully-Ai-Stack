@@ -7,7 +7,7 @@ router = APIRouter()
 
 
 @router.get("/runs")
-async def get_runs() -> dict[str, list[dict[str, str]]]:
+async def get_runs() -> dict[str, object]:
     return {"runs": [run.model_dump(mode="json") for run in list_runs()]}
 
 

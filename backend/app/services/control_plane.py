@@ -84,9 +84,9 @@ def create_run(request: StartRunRequest) -> RunRecord:
         channel=request.channel,
         route=route,
         assigned_agent_id=assigned_agent_id,
-        status="completed",
-        output=f"Supervisor routed to {assigned_agent_id} via {route} path.",
+        status="queued",
     )
+    _advance_run(run)
     _RUNS.append(run)
     return run
 
@@ -118,3 +118,9 @@ def _agent_for_route(route: str) -> str:
         "delivery": "dev-forge",
     }
     return route_map.get(route, "dev-forge")
+
+
+def _advance_run(run: RunRecord) -> None:
+    run.status = "running"
+    run.output = f"Supervisor routed to {run.assigned_agent_id} via {run.route} path."
+    run.status = "completed"
