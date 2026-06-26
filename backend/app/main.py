@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.api.routes import agents, health, runs
+from app.api.routes import agents, health, runs, telegram
 from app.core.config import settings
 
 app = FastAPI(
@@ -12,6 +12,7 @@ app = FastAPI(
 app.include_router(health.router, prefix="/api", tags=["health"])
 app.include_router(agents.router, prefix="/api", tags=["agents"])
 app.include_router(runs.router, prefix="/api", tags=["runs"])
+app.include_router(telegram.router, prefix="/api", tags=["telegram"])
 
 
 @app.get("/")
