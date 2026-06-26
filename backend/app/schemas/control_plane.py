@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 
 from pydantic import BaseModel, Field
 
@@ -24,7 +24,7 @@ class RunRecord(BaseModel):
     assigned_agent_id: str
     status: str
     output: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 class StartRunRequest(BaseModel):
